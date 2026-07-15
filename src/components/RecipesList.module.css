@@ -1,0 +1,33 @@
+.container {
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px;
+    align-items: start;
+}
+
+
+.formColumn {
+    position: sticky;
+    top: 20px;
+}
+
+
+.listColumn {
+    width: 100%;
+}
+
+
+.title {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
