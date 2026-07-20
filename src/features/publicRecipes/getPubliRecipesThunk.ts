@@ -1,13 +1,10 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
+import { getPublicRecipes } from "../../api/publicRcipesApi/publicRcipesApi";
 
 export const fetchPublicRecipes = createAsyncThunk(
     'publicRecipes/fetchPublicRecipes',
     async () => {
-        const response = await fetch(' https://api.spoonacular.com/food/recipes');
-
-        if (!response.ok) throw new Error('ошибка загрузки с сервера')
-
-        const data = await response.json();
-        return data;
+        const data = await getPublicRecipes();
+        return data.meals;
     }
 )

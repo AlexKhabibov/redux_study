@@ -4,7 +4,7 @@ import { fetchPublicRecipes } from "./getPubliRecipesThunk";
 const publicRecipesSlice = createSlice({
     name: "publicRecipes",
     initialState: {
-        publicRecipesItems: [],
+        items: [],
         loading: false,
         error: null,
     },
@@ -18,7 +18,7 @@ const publicRecipesSlice = createSlice({
             })
             .addCase(fetchPublicRecipes.fulfilled, (state, action) => {
                 state.loading = false;
-                state.publicRecipesItems = action.payload;
+                state.items = action.payload;
             })
             .addCase(fetchPublicRecipes.rejected, (state, action) => {
                 state.loading = false;

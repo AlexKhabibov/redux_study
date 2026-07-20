@@ -4,7 +4,7 @@ import { fetchProducts } from "./getProductsAsyncThunk";
 const productsSlice = createSlice({
     name: "products",
     initialState: {
-        productsItems: [],
+        items: [],
         loading: false,
         error: null,
     },
@@ -18,7 +18,7 @@ const productsSlice = createSlice({
             })
             .addCase(fetchProducts.fulfilled, (state, action) => {
                 state.loading = false;
-                state.productsItems = action.payload;
+                state.items = action.payload;
             })
             .addCase(fetchProducts.rejected, (state, action) => {
                 state.loading = false;
