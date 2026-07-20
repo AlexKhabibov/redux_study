@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addRecipe } from "../store/recipesSlice";
+import { addRecipe } from "../features/customRecipes/customRecipesSlice";
 import styles from "./RecipeForm.module.css";
 
 function RecipeForm() {

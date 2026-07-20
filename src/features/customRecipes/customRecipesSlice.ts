@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    recItems: [
+    customRecipesItems: [
         {
             id: 1,
             title: "Паста Карбонара",
@@ -107,23 +107,23 @@ const initialState = {
     ]
 };
 
-const recipesSlice = createSlice({
-    name: "recipes",
+const customRecipesSlice = createSlice({
+    name: "customRecipes",
     initialState,
     reducers: {
 
         addRecipe: (state, action) => {
-            state.recItems.unshift(action.payload);
+            state.customRecipesItems.unshift(action.payload);
         },
 
         deleteRecipe: (state, action) => {
-            state.recItems = state.recItems.filter(
+            state.customRecipesItems = state.customRecipesItems.filter(
                 recipe => recipe.id !== action.payload
             );
         },
 
         editRecipe: (state, action) => {
-            const recipe = state.recItems.find(
+            const recipe = state.customRecipesItems.find(
                 recipe => recipe.id === action.payload.id
             );
 
@@ -139,10 +139,10 @@ const recipesSlice = createSlice({
     }
 });
 
-export const recipesReducer = recipesSlice.reducer;
+export const customRecipesReducer = customRecipesSlice.reducer;
 
 export const {
     addRecipe,
     deleteRecipe,
     editRecipe
-} = recipesSlice.actions;
+} = customRecipesSlice.actions;

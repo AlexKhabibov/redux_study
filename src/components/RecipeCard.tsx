@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteRecipe, editRecipe } from "../store/recipesSlice";
+import { deleteRecipe, editRecipe } from "../features/customRecipes/customRecipesSlice";
 import styles from "./RecipeCard.module.css";
-import { toggleToFavorites } from "../store/favoritesSlice";
+import { toggleToFavoritesRecipes } from "../features/favoriteRecipes/favoriteRecipesSlice";
 
 function RecipeCard({ recipe }) {
 
@@ -273,7 +273,7 @@ function RecipeCard({ recipe }) {
                                 }
                             </ul>
 
-                        </div> 
+                        </div>
 
 
                         <div className={styles.actions}>
@@ -298,7 +298,7 @@ function RecipeCard({ recipe }) {
                                 Удалить рецепт
                             </button>
 
-                            <button onClick={() => dispatch(toggleToFavorites(recipe.id))}>
+                            <button onClick={() => dispatch(toggleToFavoritesRecipes(recipe.id))}>
                                 {isFavorites ? 'Улалить рецепт из избарнного' : 'Добавить рецепт в избарнное'}
                             </button>
 
