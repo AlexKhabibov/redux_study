@@ -1,10 +1,8 @@
-import RecipesList from "./components/RecipesList"
-
 function App() {
   return (
 
     <>
-      <RecipesList />
+
     </>
 
   )

@@ -14,7 +14,7 @@ export const store = configureStore({
         customRecipes: customRecipesReducer,
         publicRecipes: publicRecipesReducer,
         favoriteRecipes: favoriteRecipesReducer,
-        products: productsReducer,
+        publicProducts: productsReducer,
     },
 
     preloadedState

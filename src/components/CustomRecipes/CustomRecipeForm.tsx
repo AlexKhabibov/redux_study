@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addRecipe } from "../features/customRecipes/customRecipesSlice";
-import styles from "./RecipeForm.module.css";
+import styles from "./CustomRecipeForm.module.css";
+import { addRecipe } from "../../features/customRecipes/customRecipesSlice";
 
-function RecipeForm() {
+function CustomRecipeForm() {
     const dispatch = useDispatch();
 
     const [recipeTitle, setRecipeTitle] = useState("");
@@ -228,4 +228,4 @@ function RecipeForm() {
     );
 }
 
-export default RecipeForm;
+export default CustomRecipeForm;

@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteRecipe, editRecipe } from "../features/customRecipes/customRecipesSlice";
-import styles from "./RecipeCard.module.css";
-import { toggleToFavoritesRecipes } from "../features/favoriteRecipes/favoriteRecipesSlice";
 
-function RecipeCard({ recipe }) {
+import styles from "./CustomRecipeCard.module.css";
+import { deleteRecipe, editRecipe } from "../../features/customRecipes/customRecipesSlice";
+
+
+function CustomRecipeCard({ recipe }) {
 
     const dispatch = useDispatch();
 
@@ -316,4 +317,4 @@ function RecipeCard({ recipe }) {
 }
 
 
-export default RecipeCard;
+export default CustomRecipeCard;

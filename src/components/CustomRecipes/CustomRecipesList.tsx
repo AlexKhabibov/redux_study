@@ -1,10 +1,10 @@
 import { useSelector } from "react-redux";
-import styles from "./RecipesList.module.css";
-import RecipeForm from "./RecipeForm";
-import RecipeCard from "./RecipeCard";
+import styles from "./CustomRecipesList.module.css";
+import RecipeForm from "./CustomRecipeForm";
+import RecipeCard from "./CustomRecipeCard";
 import { useState } from "react";
 
-function RecipesList() {
+function CustomRecipesList() {
 
     const recipes = useSelector(state => state.recipes.recItems);
     const favorites = useSelector(state => state.favorites.items)
@@ -66,4 +66,4 @@ function RecipesList() {
     );
 }
 
-export default RecipesList;
+export default CustomRecipesList;
