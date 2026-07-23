@@ -3,13 +3,14 @@ import { useDispatch, useSelector } from "react-redux";
 
 import styles from "./CustomRecipeCard.module.css";
 import { deleteRecipe, editRecipe } from "../../features/customRecipes/customRecipesSlice";
+import { toggleToFavoriteRecipes } from "../../features/favoriteRecipes/favoriteRecipesSlice";
 
 
 function CustomRecipeCard({ recipe }) {
 
     const dispatch = useDispatch();
 
-    const favorites = useSelector(state => state.favorites.items)
+    const favorites = useSelector(state => state.favoriteRecipes.items)
     const isFavorites = favorites.includes(recipe.id)
 
     const [isEditing, setIsEditing] = useState(false);
@@ -299,7 +300,7 @@ function CustomRecipeCard({ recipe }) {
                                 Удалить рецепт
                             </button>
 
-                            <button onClick={() => dispatch(toggleToFavoritesRecipes(recipe.id))}>
+                            <button onClick={() => dispatch(toggleToFavoriteRecipes(recipe.id))}>
                                 {isFavorites ? 'Улалить рецепт из избарнного' : 'Добавить рецепт в избарнное'}
                             </button>
 

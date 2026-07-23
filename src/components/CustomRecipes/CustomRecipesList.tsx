@@ -1,13 +1,13 @@
 import { useSelector } from "react-redux";
 import styles from "./CustomRecipesList.module.css";
-import RecipeForm from "./CustomRecipeForm";
-import RecipeCard from "./CustomRecipeCard";
 import { useState } from "react";
+import CustomRecipeForm from "./CustomRecipeForm";
+import CustomRecipeCard from "./CustomRecipeCard";
 
 function CustomRecipesList() {
 
-    const recipes = useSelector(state.customRecipes.customRecipesItems);
-    const favorites = useSelector(state.favoriteRecipes.favoriteRecipesItems)
+    const recipes = useSelector(state.customRecipes.items);
+    const favorites = useSelector(state.favoriteRecipes.items)
 
     const [showFavoritesOnly, setShowFavoritesOnly] = useState(false);
     const [showForm, setShowForm] = useState(false)
@@ -21,7 +21,7 @@ function CustomRecipesList() {
 
             {showForm && (
                 <div className={styles.formColumn}>
-                    <RecipeForm />
+                    <CustomRecipeForm />
                 </div>
             )}
 
@@ -52,7 +52,7 @@ function CustomRecipesList() {
                         </p>
                     ) : (
                         displayedRecipes.map(recipe => (
-                            <RecipeCard
+                            <CustomRecipeCard
                                 key={recipe.id}
                                 recipe={recipe}
                             />
