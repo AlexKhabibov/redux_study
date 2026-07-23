@@ -6,8 +6,8 @@ import CustomRecipeCard from "./CustomRecipeCard";
 
 function CustomRecipesList() {
 
-    const recipes = useSelector(state.customRecipes.items);
-    const favorites = useSelector(state.favoriteRecipes.items)
+    const recipes = useSelector(state => state.customRecipes.items);
+    const favorites = useSelector(state => state.favoriteRecipes.items)
 
     const [showFavoritesOnly, setShowFavoritesOnly] = useState(false);
     const [showForm, setShowForm] = useState(false)
