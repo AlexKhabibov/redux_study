@@ -4,7 +4,7 @@ import { productsReducer } from "../features/products/productsSlice";
 import { favoriteRecipesReducer } from "../features/favoriteRecipes/favoriteRecipesSlice";
 import { publicRecipesReducer } from "../features/publicRecipes/publicRecipes";
 
-const savedData = localStorage.getItem('reduxState');
+const savedData = localStorage.getItem('recipesAppState');
 
 const preloadedState = savedData ? JSON.parse(savedData) : undefined;
 
@@ -21,8 +21,16 @@ export const store = configureStore({
 });
 
 store.subscribe(() => {
+
+    const state = store.getState();
+
+    const saveRecipesData = {
+        customRecipes: state.customRecipes,
+        favoriteRecipes: state.favoriteRecipes,
+    }
+
     localStorage.setItem(
-        "reduxState",
-        JSON.stringify(store.getState())
+        "recipesAppState",
+        JSON.stringify(saveRecipesData)
     );
 });

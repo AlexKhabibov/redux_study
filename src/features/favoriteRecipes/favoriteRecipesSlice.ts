@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit"
 
 const initialState = {
-    favoriteRecipesItems: []
+    items: []
 }
 
 const favoriteRecipesSlice = createSlice({
@@ -12,12 +12,12 @@ const favoriteRecipesSlice = createSlice({
 
             const recipeId = action.payload;
 
-            if (state.favoriteRecipesItems.includes(recipeId)) {
-                state.favoriteRecipesItems = state.favoriteRecipesItems.filter(
+            if (state.items.includes(recipeId)) {
+                state.items = state.items.filter(
                     id => id !== recipeId
                 );
             } else {
-                state.favoriteRecipesItems.push(recipeId);
+                state.items.push(recipeId);
             }
         }
     }

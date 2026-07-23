@@ -1,5 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { getPublicRecipes } from "../../api/publicRcipesApi/publicRcipesApi";
+import { getPublicRecipes } from "../../api/publicRecipesApi/publicRecipesApi";
 
 export const fetchPublicRecipes = createAsyncThunk(
     'publicRecipes/fetchPublicRecipes',

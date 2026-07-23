@@ -6,8 +6,8 @@ import { useState } from "react";
 
 function CustomRecipesList() {
 
-    const recipes = useSelector(state => state.recipes.recItems);
-    const favorites = useSelector(state => state.favorites.items)
+    const recipes = useSelector(state.customRecipes.customRecipesItems);
+    const favorites = useSelector(state.favoriteRecipes.favoriteRecipesItems)
 
     const [showFavoritesOnly, setShowFavoritesOnly] = useState(false);
     const [showForm, setShowForm] = useState(false)
